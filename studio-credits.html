@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Studio Credits</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f4f2ee;--card:#fff;--tx:#1b1b1f;--mu:#6b6b74;--ac:#e0552b;--ac2:#1f8a70;--bd:#e2ded6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1014;--card:#1a1b21;--tx:#f1f0ee;--mu:#9a9aa5;--ac:#ff7a4d;--ac2:#3ecfa5;--bd:#2b2c35}}
+:root[data-theme="dark"]{--bg:#0f1014;--card:#1a1b21;--tx:#f1f0ee;--mu:#9a9aa5;--ac:#ff7a4d;--ac2:#3ecfa5;--bd:#2b2c35}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 system-ui,-apple-system,Segoe UI,sans-serif}
+.w{max-width:960px;margin:0 auto;padding:16px}
+h1{margin:0;font-size:24px;letter-spacing:-.5px}h1 span{color:var(--ac)}h2{font-size:16px;margin:0 0 10px}
+.sub{color:var(--mu);font-size:13px;margin-bottom:12px}
+.tabs{display:flex;gap:6px;margin:12px 0;flex-wrap:wrap}
+button,select,input{font:inherit;color:var(--tx)}
+.tab,.b{border:1px solid var(--bd);background:var(--card);padding:8px 14px;border-radius:999px;cursor:pointer}
+.tab.on,.b.p{background:var(--ac);border-color:var(--ac);color:#fff}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.bar{height:8px;background:var(--bd);border-radius:9px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--ac2);border-radius:9px}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.mu{color:var(--mu);font-size:13px}.big{font-size:22px;font-weight:700}
+.chip{display:inline-block;border:1px solid var(--bd);border-radius:999px;padding:5px 11px;margin:3px;cursor:pointer;background:var(--bg)}
+.chip.on{background:var(--ac2);color:#fff;border-color:var(--ac2)}
+.bd{font-size:11px;background:var(--bg);border:1px solid var(--bd);border-radius:6px;padding:2px 6px;margin:2px 2px 0 0;display:inline-block}
+input,select{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px;max-width:100%}
+.ov{overflow-x:auto}table{border-collapse:collapse;width:100%}td,th{padding:6px;border-bottom:1px solid var(--bd);text-align:left;font-size:13px}
+svg{width:100%;height:auto;display:block}.hide{display:none}.pj{font-size:20px}.pj .tabs,.pj .noprint,.pj input,.pj select,.pj .sub{display:none}.pj .w{max-width:1400px}.xb{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);right:8px;opacity:.5}
+.pc{border:2px dashed var(--bd);border-radius:14px;padding:16px;text-align:center;break-inside:avoid}.pc b{display:block;font-size:17px;margin:4px 0}.pc div{font-size:32px}
+@media print{.tabs,.noprint,.xb{display:none!important}body{background:#fff;color:#000}.card{border-color:#999}.pc{border-color:#000}}
+</style></head><body><div class="w">
+<div class="row"><div><h1>Studio <span>Credits</span></h1><div class="sub">Pro Tools Foundations — we're building a studio together. <span id="lvx"></span></div></div>
+<span class="noprint"><button class="b" onclick="pjm=true;tab='board';r();try{document.documentElement.requestFullscreen()}catch(e){}">Projector</button> <button class="b" onclick="ex()">Backup</button> <button class="b" onclick="rs()">Restore</button></span></div>
+<div class="tabs" id="tabs"></div><div id="v"></div></div>
+<script>
+const ACT=[["Showed up ready (once per class)",5],["Got signal on the first try",15],["Built the session's tracks correctly",15,"trk"],["Routed the mic correctly on their own",15,"rte"],["Caught a problem before it happened",15],["Did something new without being shown",20],["Recorded a clean take",20,"clean"],["Made the artist's headphone mix",20],["Set up reverb on a vocal",20],["Arranged a beat or song section",20],["Balanced levels in a rough mix",20],["Taught a classmate a step",20],["Fixed a \"no sound\" problem",25],["Set up the whole session with no help",25],["Ran the session as Session Captain",30,"lead"],["Full session, start to save",30],["Finished a song / final export",75,"song"]];
+const LV=[["Just Starting",0],["Getting Signal",60],["Making Tracks",140],["Routing It",240],["Recording",360],["Running Sessions",500],["Arranging It",600],["Mixing It",700],["Finishing Songs",850]];
+const BG=["Mic to Speakers","Mic Safety","Track Maker","Input & Output","Clean Recording","Saved & Backed Up","No-Sound Fixer","Session Captain","Sharp Ears","Song Finisher"];
+const GL=[["Made a track","trk"],["Set an input","rte"],["Clean recordings","clean"],["Ran the setup","lead"],["Songs finished","song"]];
+let S;try{S=JSON.parse(localStorage.getItem("sc1"))}catch(e){}
+S=S||{st:[],log:[],goal:2000};{const M={"Signal Path":"Mic to Speakers","48V Safety":"Mic Safety","Phantom Power Safe":"Mic Safety","Track Architect":"Track Maker","Routing":"Input & Output","Clean Take":"Clean Recording","Save It Twice":"Saved & Backed Up","Saved It Twice":"Saved & Backed Up","Fix It":"No-Sound Fixer","Problem Solver":"No-Sound Fixer","Ear Check":"Sharp Ears","Good Ears":"Sharp Ears","Finisher":"Song Finisher"};S.st.forEach(x=>x.b=x.b.map(b=>M[b]||b))}let tab="board",sel=[],gs="all",u=1;
+let ref=null,lastT=0,tm;
+const loc=()=>{try{localStorage.setItem("sc1",JSON.stringify(S))}catch(e){}};
+const push=()=>{if(!ref)return;clearTimeout(tm);tm=setTimeout(()=>{ref.set({v:JSON.stringify(S),t:S.t}).catch(()=>setLive("○ Sync problem"))},400)};
+const sv=()=>{S.t=Date.now();lastT=S.t;loc();push()};
+function setLive(t){const e=document.getElementById("lvx");if(e)e.textContent=t}
+(async()=>{try{const DB=window.claude&&await claude.use("db");if(!DB)return;ref=DB.doc("classes/protools");setLive("● Live sync on");
+ref.onSnapshot(sn=>{const d=sn.exists?sn.data():null;if(!d){if(S.st.length)push();return}
+if(d.t===lastT)return;
+if(d.t>(S.t||0)){try{S=JSON.parse(d.v);S.t=lastT=d.t;loc();r()}catch(e){}}else if((S.t||0)>d.t)push()},()=>setLive("○ Sync problem"))}catch(e){}})();
+const E=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cr=id=>S.log.filter(l=>l.s==id).reduce((a,l)=>a+l.p,0)+(S.welcome||0);
+const lv=c=>{let i=0;LV.forEach((l,j)=>{if(c>=l[1])i=j});return i};
+const tot=()=>S.log.reduce((a,l)=>a+l.p,0)+(S.welcome||0)*S.st.length;let pjm=false;
+const BD={"Mic to Speakers":"Explains how sound travels from the mic to the speakers","Mic Safety":"Turns the volume down and checks the mic before hitting 48V","Track Maker":"Makes and names the right kind of track","Input & Output":"Sets inputs, outputs, and sends correctly","Clean Recording":"Records a vocal that doesn't clip or distort","Saved & Backed Up":"Saves, names, and backs up the session","No-Sound Fixer":"Fixes a no-sound or wrong-input problem","Session Captain":"Leads the class through setup","Sharp Ears":"Hears a level, noise, or balance problem","Song Finisher":"Takes a song all the way to export"};
+const today=()=>new Date().toISOString().slice(0,10);
+function nav(){const t=[["board","Board"],["award","Award"],["growth","Growth"],["roster","Roster & Badges"],["log","Log"],["print","Print cards"]];
+document.getElementById("tabs").innerHTML=t.map(x=>`<button class="tab ${tab==x[0]?"on":""}" onclick="tab='${x[0]}';r()">${x[1]}</button>`).join("")}
+function board(){const T=tot();
+let h=`<div class="card"><h2>The Studio Is Leveling Up</h2><div class="row"><span class="big">${T} SC</span><span class="mu">goal <input type="number" value="${S.goal}" style="width:80px" onchange="S.goal=+this.value||1;sv();r()"> · welcome <select onchange="S.welcome=+this.value;sv();r()"><option value="0">0</option><option value="50" ${S.welcome==50?"selected":""}>50 SC</option></select></span></div><div class="bar"><i style="width:${Math.min(100,T/S.goal*100)}%"></i></div></div>`;
+h+=`<div class="card"><h2>Class goals</h2>`+GL.map(g=>{const n=new Set(S.log.filter(l=>l.k==g[1]).map(l=>l.s)).size,m=S.st.length||1;return`<div class="row"><span>${g[0]}</span><span class="mu">${n} / ${S.st.length}</span></div><div class="bar"><i style="width:${n/m*100}%"></i></div>`}).join("")+`</div>`;
+h+=`<div class="g">`+(S.st.length?[...S.st].sort((a,b)=>a.n.localeCompare(b.n)).map(s=>{const c=cr(s.id),i=lv(c),nx=LV[i+1],p=nx?(c-LV[i][1])/(nx[1]-LV[i][1])*100:100,w=[...S.log].reverse().find(l=>l.s==s.id);
+return`<div class="card" style="margin:0"><div class="row"><b>${E(s.n)}</b><span class="big">${c}</span></div><div class="mu">${LV[i][0]}</div><div class="bar"><i style="width:${p}%"></i></div><div class="mu">${nx?nx[1]-c+" SC to "+nx[0]:"Top level!"}</div><div class="mu">${w?"Latest: "+E(w.a):""}</div><div>${s.b.map(x=>`<span class="bd">🏅 ${x}</span>`).join("")}</div></div>`}).join(""):`<div class="card">Add your students in Roster to begin.</div>`)+`</div><div class="sub" style="margin-top:8px">Cards are alphabetical on purpose — no ranking, just growth.</div>`;return h}
+function award(){return`<div class="card"><h2>1 · Who earned it?</h2>`+S.st.map(s=>`<span class="chip ${sel.includes(s.id)?"on":""}" onclick="tg(${s.id})">${E(s.n)}</span>`).join("")+`<div><button class="b" onclick="sel=S.st.map(s=>s.id);r()">All</button> <button class="b" onclick="sel=[];r()">Clear</button></div></div>
+<div class="card"><h2>2 · What did they do?</h2><div class="mu" style="margin-bottom:8px">Keep it for real wins — about 2–4 awards per student per class.</div><select id="ac">${ACT.map((a,i)=>`<option value="${i}">${a[0]} (+${a[1]})</option>`).join("")}<option value="x">Custom…</option></select>
+<div style="margin-top:8px"><input id="ca" placeholder="Custom activity"> <input id="cp" type="number" placeholder="SC" style="width:70px"></div>
+<div style="margin-top:8px">Date <input type="date" id="dt" value="${today()}"> <button class="b p" onclick="go()">Award</button></div></div>`}
+function tg(id){sel=sel.includes(id)?sel.filter(x=>x!=id):[...sel,id];r()}
+function go(){const v=document.getElementById("ac").value,d=document.getElementById("dt").value||today();let a,p,k="";
+if(v=="x"){a=document.getElementById("ca").value||"Custom";p=+document.getElementById("cp").value||0}else{const x=ACT[+v];a=x[0];p=x[1];k=x[2]||""}
+if(!sel.length)return alert("Pick at least one student.");sel.forEach(s=>S.log.push({id:u++ +Date.now(),s,d,a,p,k}));sel=[];sv();tab="board";r()}
+function growth(){const dates=[...new Set(S.log.map(l=>l.d))].sort();
+let h=`<div class="card"><h2>Growth over time</h2><select onchange="gs=this.value;r()"><option value="all">Whole class</option>${S.st.map(s=>`<option value="${s.id}" ${gs==s.id?"selected":""}>${E(s.n)}</option>`).join("")}</select>`;
+if(dates.length<1)return h+`<p class="mu">Award some credits to see the line climb.</p></div>`;
+let run=0;const pts=dates.map(d=>{run+=S.log.filter(l=>l.d==d&&(gs=="all"||l.s==gs)).reduce((a,l)=>a+l.p,0);return[d,run]});
+const mx=Math.max(...pts.map(p=>p[1]),1),W=600,H=240,px=i=>40+(pts.length>1?i/(pts.length-1):.5)*(W-60),py=v=>H-30-v/mx*(H-60);
+h+=`<svg viewBox="0 0 ${W} ${H}"><line x1="40" y1="${H-30}" x2="${W-10}" y2="${H-30}" stroke="var(--bd)"/><text x="4" y="${py(mx)+4}" fill="var(--mu)" font-size="11">${mx}</text><text x="4" y="${H-26}" fill="var(--mu)" font-size="11">0</text><polyline fill="none" stroke="var(--ac)" stroke-width="3" points="${pts.map((p,i)=>px(i)+","+py(p[1])).join(" ")}"/>`+pts.map((p,i)=>`<circle cx="${px(i)}" cy="${py(p[1])}" r="4" fill="var(--ac)"/><text x="${px(i)}" y="${H-12}" fill="var(--mu)" font-size="10" text-anchor="middle">${p[0].slice(5)}</text>`).join("")+`</svg><div class="mu">Cumulative Studio Credits by class date</div></div>`;return h}
+function roster(){return`<div class="card"><h2>Add student</h2><input id="nn" placeholder="Name or stage name"> <button class="b p" onclick="add()">Add</button> <button class="b" onclick="bulk()">Add many…</button></div>`+S.st.map(s=>`<div class="card"><div class="row"><b>${E(s.n)}</b><span><button class="b" onclick="rn(${s.id})">Rename</button> <button class="b" onclick="rm(${s.id})">Remove</button></span></div><div class="mu">Badges (tap to award)</div>`+BG.map(b=>`<span class="chip ${s.b.includes(b)?"on":""}" onclick="bdg(${s.id},'${b}')">${b}</span>`).join("")+`</div>`).join("")}
+function add(){const n=document.getElementById("nn").value.trim();if(n){S.st.push({id:u++ +Date.now(),n,b:[]});sv();r()}}
+function bulk(){const t=prompt("One name per line:");if(t){t.split("\n").map(x=>x.trim()).filter(Boolean).forEach(n=>S.st.push({id:u++ +Date.now(),n,b:[]}));sv();r()}}
+function rn(id){const s=S.st.find(x=>x.id==id),n=prompt("Name",s.n);if(n){s.n=n;sv();r()}}
+function rm(id){if(confirm("Remove student and their credits?")){S.st=S.st.filter(x=>x.id!=id);S.log=S.log.filter(l=>l.s!=id);sv();r()}}
+function bdg(id,b){const s=S.st.find(x=>x.id==id);s.b=s.b.includes(b)?s.b.filter(x=>x!=b):[...s.b,b];sv();r()}
+function log(){return`<div class="card ov"><h2>Class log</h2><table><tr><th>Date</th><th>Student</th><th>Activity</th><th>SC</th><th></th></tr>`+[...S.log].reverse().map(l=>{const s=S.st.find(x=>x.id==l.s);return`<tr><td>${l.d}</td><td>${s?E(s.n):"?"}</td><td>${E(l.a)}</td><td>+${l.p}</td><td><button class="b" onclick="del(${l.id})">✕</button></td></tr>`}).join("")+`</table></div>`}
+function print(){return`<div class="noprint card"><h2>Printable cards</h2><div class="mu">Print or save as PDF, then cut out. Levels first, then skill badges.</div><button class="b p" onclick="window.print()">Print</button></div><div class="g">`+LV.map((l,i)=>`<div class="pc"><div>⭐</div><b>${l[0]}</b><span class="mu">${l[1]}${LV[i+1]?"–"+(LV[i+1][1]-1):"+"} SC</span></div>`).join("")+BG.map(b=>`<div class="pc"><div>🏅</div><b>${b} Badge</b><span class="mu">${BD[b]}</span></div>`).join("")+`</div>`}
+function del(id){S.log=S.log.filter(l=>l.id!=id);sv();r()}
+async function ex(){try{const d=await claude.use("downloads");if(!d)throw{};await d.save({filename:"studio-credits-backup-"+today()+".json",data:JSON.stringify(S)})}catch(e){if(!e||e.code!="declined")alert("Couldn't save the backup file from here.")}}
+function rs(){const i=document.createElement("input");i.type="file";i.accept=".json,application/json";i.onchange=()=>{const f=i.files[0];if(!f)return;f.text().then(t=>{const d=JSON.parse(t);if(!d||!Array.isArray(d.st)||!Array.isArray(d.log))throw 0;if(!confirm("Replace everything with this backup?"))return;S=d;sv();r()}).catch(()=>alert("That file isn't a Studio Credits backup."))};i.click()}
+function r(){nav();document.getElementById("v").innerHTML={board,award,growth,roster,log,print}[tab]();document.body.classList.toggle("pj",pjm);if(pjm)document.getElementById("v").insertAdjacentHTML("afterbegin",`<button class="b p xb" onclick="pjm=false;try{document.exitFullscreen()}catch(e){}r()">Exit</button>`)}
+r();
+</script></body></html>
