@@ -1,2 +1,3 @@
 # Studio-Credits-
-Class room progress tracker 
+
+A classroom progress tracker for the Pro Tools Foundations course.
